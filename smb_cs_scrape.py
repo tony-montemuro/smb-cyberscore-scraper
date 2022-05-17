@@ -27,12 +27,12 @@ def get_chart_vals(game, mode):
         if mode == 's':
             return 1054, 1171
         if mode == 't':
-            return 141580, 141666
+            return 141568, 141666
     if game == '2':
         if mode == 's':
             return 1401, 1550
         if mode == 't':
-            return 141685, 141803
+            return 141685, 141959
     if game == 'p':
         if mode == 's':
             return 22451, 22600
@@ -109,6 +109,7 @@ def fetch_all_submissions(s, f, game, mode):
     # be performed on that chart
     skipped_charts = [1154, 16403, 141607, 141660, 141774]
     skipped_range = (15188, 16401)
+    skipped_range_2 = (141804, 141949)
     extra_chart_smb1_score = 367365
     extra_chart_smb1_time = 367366
 
@@ -123,6 +124,9 @@ def fetch_all_submissions(s, f, game, mode):
                 valid_chart = False
         if chart_num >= skipped_range[0] and chart_num <= skipped_range[1]:
             valid_chart = False
+        if (chart_num >= skipped_range_2[0] and chart_num <= skipped_range_2[1]) and game == 'smb2':
+            valid_chart = False
+
 
         # if valid, we can go ahead and scrape the datas
         if valid_chart:
