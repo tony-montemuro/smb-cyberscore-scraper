@@ -27,7 +27,7 @@ def get_chart_vals(game, mode):
         if mode == 's':
             return 1401, 1550
         if mode == 't':
-            return 141667, 141684
+            return 141667, 141959
     if game == 'p':
         if mode == 's':
             return 22451, 22600
